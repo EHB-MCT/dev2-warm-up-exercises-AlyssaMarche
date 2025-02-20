@@ -43,23 +43,31 @@ function warmup2() {
 	});
 
 	//TODO: scores sorteren
-	document.querySelector("#button-2b").addEventListener(
-		"click",
-		function (
-			scores = score.sort(function (a, b) {
-				if (a > b) {
-					return 1;
-				} else {
-					return -1;
-				}
-			})
-		) {}
-	);
-    //TODO: totaal optellen
+	document.querySelector("#button-2b").addEventListener("click", function () {
+		console.log("a");
+		scores.sort(function (a, b) {
+			if (a > b) {
+				return 1;
+			} else {
+				return -1;
+			}
+		});
+		let html = "<ul>";
+		scores.forEach(function (score) {
+			html += `<li>${score}</li>`;
+		});
+		html += "</ul>";
+		document.querySelector("#content-2").innerHTML = html;
+	});
 	document.querySelector("#button-2c").addEventListener("click", function () {
-		const sum = score.reduce(function (total, current) {
+		console.log("a");
+		const sum = scores.reduce(function (total, current) {
 			return total + current;
 		});
+		const newText = document.createElement("h1");
+		newText.className = "content";
+		newText.innerHTML = `<h1>Totale score: ${sum}</h1>`;
+		document.querySelector("#content-2").append(newText);
 	});
 }
 
