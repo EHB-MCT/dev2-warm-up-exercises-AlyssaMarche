@@ -3,6 +3,7 @@ import { getRandomScores, getStudentJSON, runTitle } from "./lib.js";
 runTitle();
 warmup1();
 warmup2();
+warmup3();
 
 function warmup1() {
 	console.log("Exercise week 1");
@@ -72,7 +73,19 @@ function warmup2() {
 }
 
 function warmup3() {
-	let student = getStudentJSON();
+	document.querySelector("#button-3a").addEventListener("click", function () {
+		let student = getStudentJSON();
+		let object = JSON.parse(student);
+		console.log(object);
+	});
+	document.querySelector("#button-3b").addEventListener("click", function () {
+		let student = getStudentJSON();
+		let object = JSON.parse(student);
+		document.querySelector(
+			"#content-3"
+		).innerHTML = `<h2>${object.firstname}</h2>`;
+		document.querySelector("#content-3").innerHTML += `<h2>${object.age}</h2>`;
+	});
 }
 
 function warmup4() {

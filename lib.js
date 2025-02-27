@@ -24,11 +24,11 @@ export const getRandomScores = (amount) => {
 }
 
 export const getStudentJSON = () => {
-    const firstnames = ["Daan", "Aghlaan", "Zwaan", "Sjaan", "Maan"];
-    const lastnames = ["Banaan", "Khan", "Graan", "Traan", "Kraan"];
-    const f = firstnames[Math.floor(Math.random() * 5)];
-    const l = lastnames[Math.floor(Math.random() * 5)];
-    const a = Math.floor(Math.random() * 5) + 18;
-    const g = Math.round(Math.random()) ? true : false;
+    const firstnames = ["Alyssa"];
+    const lastnames = ["Marche"];
+    const f = firstnames[0];
+    const l = lastnames[0];
+    const a = 20;
+    const g =  false;
     return `{"firstname":"${f}", "name":"${l}", "age":${a}, "isGraduated": ${g}}`
 }
