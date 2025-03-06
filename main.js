@@ -4,6 +4,7 @@ runTitle();
 warmup1();
 warmup2();
 warmup3();
+warmup4();
 
 function warmup1() {
 	console.log("Exercise week 1");
@@ -90,6 +91,51 @@ function warmup3() {
 
 function warmup4() {
 	let main, min, max;
+	document.querySelector("#button-4a").addEventListener("click", function () {
+		console.log("button werkt");
+		const URL =
+			"https://api.openweathermap.org/data/2.5/weather?q=Brussels&APPID=d7b955c4c268fe54649d6f0d702b39d1&units=metric";
+		fetch(URL)
+			.then(function (response) {
+				return response.json();
+			})
+			.then(function (data) {
+				console.log(data);
+				main = data.main.temp;
+				min = data.main.temp_min;
+				max = data.main.temp_max;
+			});
+	});
+	document
+		.querySelector("#button-4b")
+		.addEventListener("click", function (data) {
+			console.log("button werkt");
+			document.querySelector("#content-4").innerHTML = `
+		<h2>Temp: ${main}</h2>
+		<h2>Min temp: ${min}</h2>
+		<h2>Max temp: ${max}</h2>
+		`;
+		});
 }
 
 function warmup5() {}
+
+//const URL = 'weatherApi'
+
+//function innit(){
+//fetch(URL).then{function(
+//console.log(response);
+//return response.json();
+//)}.then(function(data){
+// console.log(data);renderHTML(data);
+//})
+//}
+// function renderHTML{
+// 	document.queryselector('#container').innerhtml = `
+// <h1>${data.name}</h1>
+// <h4>Lat:${data.latitude}</h4>
+// <h4>Lon:${data.longitude}</h4>
+// `
+//}
+//innit();
+//in de body verwachten we de data
