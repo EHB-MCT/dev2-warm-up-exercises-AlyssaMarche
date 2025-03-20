@@ -1,5 +1,5 @@
 import { getRandomScores, getStudentJSON, runTitle } from "./lib.js";
-
+import Student from "./student.js";
 runTitle();
 warmup1();
 warmup2();
@@ -74,6 +74,7 @@ function warmup2() {
 }
 
 function warmup3() {
+	console.log("Exercise week 3");
 	document.querySelector("#button-3a").addEventListener("click", function () {
 		let student = getStudentJSON();
 		let object = JSON.parse(student);
@@ -90,6 +91,7 @@ function warmup3() {
 }
 
 function warmup4() {
+	console.log("Exercise week 4");
 	let main, min, max;
 	document.querySelector("#button-4a").addEventListener("click", function () {
 		console.log("button werkt");
@@ -119,16 +121,21 @@ function warmup4() {
 }
 
 function warmup5() {
-	document
-		.querySelector("#button-5a")
-		.addEventListener("click", function () {
-			console.log("This button works")
-		});
-		document
-		.querySelector("#button-5b")
-		.addEventListener("click", function () {
-			console.log("This button works")
-		});
+	let student;
+	console.log("Exercise week 5");
+	document.querySelector("#button-5a").addEventListener("click", function () {
+		console.log("This button works");
+		student = new Student("Alyssa", 20, 5);
+		console.log(student);
+	});
+	document.querySelector("#button-5b").addEventListener("click", function () {
+		console.log("This button works");
+		document.querySelector("#content-5").innerHTML = 
+		`<h2>name: ${student.name} </h2>
+		<h2>age: ${student.age} </h2>
+
+		`
+	});
 }
 
 //const URL = 'weatherApi'
