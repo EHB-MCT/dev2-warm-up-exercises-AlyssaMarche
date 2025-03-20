@@ -5,7 +5,7 @@ warmup1();
 warmup2();
 warmup3();
 warmup4();
-
+warmup5();
 function warmup1() {
 	console.log("Exercise week 1");
 	document.querySelector("#button-1a").addEventListener("click", function () {
@@ -118,7 +118,18 @@ function warmup4() {
 		});
 }
 
-function warmup5() {}
+function warmup5() {
+	document
+		.querySelector("#button-5a")
+		.addEventListener("click", function () {
+			console.log("This button works")
+		});
+		document
+		.querySelector("#button-5b")
+		.addEventListener("click", function () {
+			console.log("This button works")
+		});
+}
 
 //const URL = 'weatherApi'
 
